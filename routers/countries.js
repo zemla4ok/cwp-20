@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-db.country.findAll().then((res)=>{
-    console.log(res);
+router.get('/countries', async (req, res, next) => {
+    console.log("ze");
 })
+
+module.exports = router;
