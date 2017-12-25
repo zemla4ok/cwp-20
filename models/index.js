@@ -8,10 +8,10 @@ module.exports = (Sequelize) =>{
 
     const city = City(Sequelize, connection);
     const country = Country(Sequelize, connection);
-    const countrylanguage = Countrylanguage(Sequelize, connection);
+    const language = Language(Sequelize, connection);
 
     country.hasMany(city, {foreignKey: 'CountryCode', primaryKey: 'Code'});
-    country.hasMany(countrylanguage, {foreignKey: 'CountryCode', primaryKey: 'Code'});
+    country.hasMany(language, {foreignKey: 'CountryCode', primaryKey: 'Code'});
 
     return {
         Sequelize,
@@ -19,7 +19,7 @@ module.exports = (Sequelize) =>{
         models: {
             city,
             country,
-            countrylanguage,
+            language,
         }
     };
 };
